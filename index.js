@@ -11,7 +11,10 @@ app.get("/", (req, res) => {
 });
 
 app.post("/submit", (req, res) => {
-   
+  let bandName = adj[Math.floor(Math.random()*adj.length)] +" "+noun[Math.floor(Math.random()*adj.length)];
+  res.render("index.ejs", {
+    name: bandName
+  })
 });
 
 app.listen(port, () => {
